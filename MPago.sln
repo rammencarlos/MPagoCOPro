@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mpago.Domain", "Mpago.Domai
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mpago.Service", "Mpago.Service\Mpago.Service.csproj", "{E625D3CE-0993-4437-828A-D76B95D7947E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPago.Platform", "MPago.Platform\MPago.Platform.csproj", "{9D2E681C-E5D7-475D-A61C-01D1EFEA5FDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPago.Platform", "MPago.Platform\MPago.Platform.csproj", "{9D2E681C-E5D7-475D-A61C-01D1EFEA5FDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPago.Data", "MPago.Data\MPago.Data.csproj", "{0C9FB9E9-0927-42CC-8EE8-A6737F0324CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{9D2E681C-E5D7-475D-A61C-01D1EFEA5FDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D2E681C-E5D7-475D-A61C-01D1EFEA5FDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D2E681C-E5D7-475D-A61C-01D1EFEA5FDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C9FB9E9-0927-42CC-8EE8-A6737F0324CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C9FB9E9-0927-42CC-8EE8-A6737F0324CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C9FB9E9-0927-42CC-8EE8-A6737F0324CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C9FB9E9-0927-42CC-8EE8-A6737F0324CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

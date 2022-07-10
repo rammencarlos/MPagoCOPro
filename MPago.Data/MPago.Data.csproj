@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MPago.Data\MPago.Data.csproj" />
     <ProjectReference Include="..\Mpago.Domain\Mpago.Domain.csproj" />
   </ItemGroup>
 
