@@ -54,7 +54,7 @@
                             </div><!-- End .details-filter-row -->
 
                             <div class="product-details-action">
-                                <a id="btnBuyNow" asp-action="detail" asp-controller="cart" asp-route-id="@Model.Id" asp-route-quantity="@Model.Quantity" onclick="setRouteParameter()" class="btn-product btn-cart"><span>Buy Now</span></a>
+                                <a id="btnBuyNow" asp-action="checkout" asp-controller="cart" asp-route-id="@Model.Id" asp-route-quantity="@Model.Quantity" onclick="setRouteParameter()" class="btn-product btn-cart"><span>Buy Now</span></a>
                             </div><!-- End .product-details-action -->
 
                             <div class="product-details-footer">
@@ -197,6 +197,9 @@
     </div>
 </main>
 @section Scripts {
+
+    
+
     <script>
         function setRouteParameter() {
             var quantity = $("input[name=Quantity]").val();

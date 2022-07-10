@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="mercadopago-sdk" Version="2.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MPago.Data\MPago.Data.csproj" />
     <ProjectReference Include="..\Mpago.Domain\Mpago.Domain.csproj" />
   </ItemGroup>

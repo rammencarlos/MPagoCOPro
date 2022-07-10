@@ -1,0 +1,97 @@
+﻿@model Mpago.Domain.Product.SmartPhoneDTO
+@{
+}
+
+<main class="main">
+    <div class="page-header text-center">
+        <div class="container">
+            <h1 class="page-title">Shopping Cart<span>Shop</span></h1>
+        </div><!-- End .container -->
+    </div><!-- End .page-header -->
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
+            </ol>
+        </div><!-- End .container -->
+    </nav><!-- End .breadcrumb-nav -->
+
+    <div class="page-content">
+        <div class="cart">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <aside class="col-lg-6">
+                        <div class="summary summary-cart">
+                            <h3 class="summary-title">Cart Total</h3><!-- End .summary-title -->
+
+                            <table class="table table-summary">
+                                <tbody>
+                                    <tr class="summary-subtotal">
+                                        <td>Subtotal:</td>
+                                        <td>$@Model.Price</td>
+                                    </tr><!-- End .summary-subtotal -->
+                                    <tr class="summary-shipping">
+                                        <td>Shipping:</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+
+                                    <tr class="summary-shipping-row">
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="free-shipping" name="shipping" class="custom-control-input">
+                                                <label class="custom-control-label" for="free-shipping">Quantity</label>
+                                            </div><!-- End .custom-control -->
+                                        </td>
+                                        <td>@Model.Quantity</td>
+                                    </tr><!-- End .summary-shipping-row -->
+
+                                    <tr class="summary-total">
+                                        <td>Total:</td>
+                                        <td>$@Model.Price</td>
+                                    </tr><!-- End .summary-total -->
+                                </tbody>
+                            </table><!-- End .table table-summary -->
+
+                             <div class="btn btn-outline-primary-2 btn-order btn-block cho-container">
+
+                                 </div>
+                        </div><!-- End .summary -->
+
+                    </aside><!-- End .col-lg-3 -->
+                </div><!-- End .row -->
+            </div><!-- End .container -->
+        </div><!-- End .cart -->
+    </div><!-- End .page-content -->
+</main><!-- End .main -->
+@section Scripts {
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+
+    <script>
+        // Agrega credenciales de SDK
+        const mp = new MercadoPago("TEST-31372525-b23b-4931-9cdf-16920370f61d", {
+            locale: "es-MX",
+        });
+
+        //debugger
+        var preferenceId = '@Html.Raw(ViewData["preferenceId"]).ToString()';
+        // Inicializa el checkout
+        mp.checkout({
+            preference: {
+                id: preferenceId,
+            },
+            render: {
+                container: ".cho-container", // Indica el nombre de la clase donde se mostrará el botón de pago
+                label: "PROCEED TO CHECKOUT", // Cambia el texto del botón de pago (opcional)
+            }
+        });
+    </script>
+
+    <script>
+        $(function() {
+            $('.page-body').css({ 'margin-left': '90px' });
+            $('.footer').css({ 'margin-left': '90px' });
+        });
+    </script>
+    }

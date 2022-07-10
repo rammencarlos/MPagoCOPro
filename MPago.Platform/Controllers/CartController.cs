@@ -7,12 +7,25 @@ namespace MPago.Platform.Controllers
 {
     public class CartController : Controller
     {
-        public ActionResult Detail(string id, int quantity)
+        public async Task<ActionResult> Checkout(string id, int quantity)
         {
             if (string.IsNullOrEmpty(id) || quantity == 0)
                 return RedirectToAction("index","home");
 
-            return View();
+            SmartPhoneDTO smartPhone = new SmartPhoneService().GetSmartPhone(id);
+            ViewData["Title"] = "Checkout - " + smartPhone.Name;
+
+            ViewData["preferenceId"] = await new MPagoService().CreatePreference(smartPhone);
+            if (ViewData["preferenceId"] == null)
+            {
+                return RedirectToAction("index", "home");
+            }
+            //ViewData["preferenceId"] = "16763907-43323d57-b23e-4d2e-9440-917c38e2ecac";
+
+            smartPhone.Price = smartPhone.Price * quantity;
+            smartPhone.Quantity = quantity;
+
+            return View(smartPhone);
         }
     }
 }

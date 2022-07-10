@@ -15,6 +15,7 @@ namespace MPago.Platform.Controllers
             SmartPhoneDTO smartPhone = new SmartPhoneService().GetSmartPhone(id);
             ViewData["Title"] = smartPhone.Name;
 
+
             return View(smartPhone);
         }
     }
