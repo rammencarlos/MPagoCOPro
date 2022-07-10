@@ -15,8 +15,8 @@ namespace MPago.Platform.Controllers
             SmartPhoneDTO smartPhone = new SmartPhoneService().GetSmartPhone(id);
             ViewData["Title"] = "Checkout - " + smartPhone.Name;
 
-            ViewData["preferenceId"] = await new MPagoService().CreatePreference(smartPhone);
-            if (ViewData["preferenceId"] == null)
+            smartPhone.InitPoint = await new MPagoService().CreatePreference(smartPhone);
+            if (smartPhone.InitPoint == null)
             {
                 return RedirectToAction("index", "home");
             }
