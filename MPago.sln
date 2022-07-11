@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mpago.Service", "Mpago.Serv
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPago.Platform", "MPago.Platform\MPago.Platform.csproj", "{9D2E681C-E5D7-475D-A61C-01D1EFEA5FDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPago.Data", "MPago.Data\MPago.Data.csproj", "{0C9FB9E9-0927-42CC-8EE8-A6737F0324CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPago.Data", "MPago.Data\MPago.Data.csproj", "{0C9FB9E9-0927-42CC-8EE8-A6737F0324CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPago.WebAPI", "MPago.WebAPI\MPago.WebAPI.csproj", "{BEBB3C89-BF89-4757-8067-362C22BDF9A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0C9FB9E9-0927-42CC-8EE8-A6737F0324CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C9FB9E9-0927-42CC-8EE8-A6737F0324CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C9FB9E9-0927-42CC-8EE8-A6737F0324CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEBB3C89-BF89-4757-8067-362C22BDF9A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEBB3C89-BF89-4757-8067-362C22BDF9A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEBB3C89-BF89-4757-8067-362C22BDF9A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEBB3C89-BF89-4757-8067-362C22BDF9A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

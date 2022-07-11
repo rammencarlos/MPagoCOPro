@@ -18,7 +18,12 @@
         <div class="container">
             <h1 class="error-title">Compra realizada con exito</h1><!-- End .error-title -->
             <p>Tu compra se está procesando y se enviará lo mas pronto posible</p>
-            <a href="index.html" class="btn btn-outline-primary-2 btn-minwidth-lg">
+            <p>collection_id: @ViewData["collection_id"]</p>
+            <p>collection_status: @ViewData["collection_status"]</p>
+            <p>payment_id: @ViewData["payment_id"]</p>
+            <p>payment_type: @ViewData["payment_type"]</p>
+            <p>external_reference: @ViewData["external_reference"]</p>
+            <a asp-action="index" asp-controller="home" class="btn btn-outline-primary-2 btn-minwidth-lg">
                 <span>BACK TO HOMEPAGE</span>
                 <i class="icon-long-arrow-right"></i>
             </a>

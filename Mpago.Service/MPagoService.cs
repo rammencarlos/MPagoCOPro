@@ -55,9 +55,9 @@ namespace Mpago.Service
                     },
                     BackUrls = new PreferenceBackUrlsRequest
                     {
-                        Failure = "https://cramos.dev/lab/ecommerce/fail",
-                        Pending = "https://cramos.dev/lab/ecommerce/pending",
-                        Success = "https://cramos.dev/lab/ecommerce/success"
+                        Failure = "https://cramos.dev/lab/ecommerce/status/fail",
+                        Pending = "https://cramos.dev/lab/ecommerce/status/pending",
+                        Success = "https://cramos.dev/lab/ecommerce/status/success"
                     },
 
                     ExternalReference = "ca_r_m@hotmail.com",
@@ -66,6 +66,8 @@ namespace Mpago.Service
                     AutoReturn = "approved",
                     Expires = true,
                     DateOfExpiration = DateTime.Now.AddDays(7),
+                    NotificationUrl = "https://cramos.dev/lab/ecommerce/api/notification",
+                    //NotificationUrl = "https://eo487wvw9j28t93.m.pipedream.net",
                 };
 
                 // Crea la preferencia usando el client
