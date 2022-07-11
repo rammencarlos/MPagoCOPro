@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MercadoPago.Config;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Mpago.Domain.Product;
 using Mpago.Service;
@@ -14,13 +15,13 @@ namespace MPago.Platform.Controllers
 
             SmartPhoneDTO smartPhone = new SmartPhoneService().GetSmartPhone(id);
             ViewData["Title"] = "Checkout - " + smartPhone.Name;
-
-            smartPhone.InitPoint = await new MPagoService().CreatePreference(smartPhone);
+           
+            smartPhone.InitPoint = await new MPagoProvider().CreatePreference(smartPhone);
             if (smartPhone.InitPoint == null)
             {
                 return RedirectToAction("index", "home");
             }
-            //ViewData["preferenceId"] = "16763907-43323d57-b23e-4d2e-9440-917c38e2ecac";
+            ViewData["preferenceId"] = smartPhone.InitPoint;
 
             smartPhone.Price = smartPhone.Price * quantity;
             smartPhone.Quantity = quantity;

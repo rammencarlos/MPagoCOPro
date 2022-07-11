@@ -24,7 +24,7 @@ namespace Mpago.Service
                     {
                         new PreferenceItemRequest
                         {
-                            Id = smartp.Id,
+                            Id = "1234",
                             Title = smartp.Name,
                             PictureUrl = smartp.UrlImage,
                             Description = "Dispositivo móvil de Tienda e-commerce",
@@ -36,9 +36,10 @@ namespace Mpago.Service
                     },
                     Payer = new PreferencePayerRequest
                     {
-                        Name = "Lalo Landa",
+                        Name = "Lalo",
+                        Surname = "Landa",
                         Phone = new MercadoPago.Client.Common.PhoneRequest { AreaCode = "11", Number = "2241061234" },
-                        Address = new MercadoPago.Client.Common.AddressRequest { StreetName = "Falsa", StreetNumber = "123", ZipCode = "75620" },
+                        Address = new MercadoPago.Client.Common.AddressRequest { StreetName = "Falsa", StreetNumber="123", ZipCode = "75620" },
                         Email = "test_user_81131286@testuser.com",
 
                     },
@@ -49,7 +50,7 @@ namespace Mpago.Service
                         {
                             new PreferencePaymentMethodRequest
                             {
-                                Id = "Mastercard"
+                                Id = "Visa"
                             }
                         }
                     },
@@ -67,7 +68,7 @@ namespace Mpago.Service
                     Expires = true,
                     DateOfExpiration = DateTime.Now.AddDays(7),
                     NotificationUrl = "https://cramos.dev/lab/ecommerce/api/notification",
-                    //NotificationUrl = "https://eo487wvw9j28t93.m.pipedream.net",
+                    //NotificationUrl = "https://eobgdljhoq2u0dt.m.pipedream.net",
                 };
 
                 // Crea la preferencia usando el client

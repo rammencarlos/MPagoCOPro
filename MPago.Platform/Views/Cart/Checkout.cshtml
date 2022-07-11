@@ -55,6 +55,8 @@
                             </table><!-- End .table table-summary -->
                             <a href="@Html.DisplayFor(model => model.InitPoint)" class="btn btn-outline-primary-2 btn-order btn-block">Pagar con Mercado Pago</a>
 
+                            <input type="hidden" id="deviceId">
+
                         </div><!-- End .summary -->
 
                     </aside><!-- End .col-lg-3 -->
@@ -64,28 +66,26 @@
     </div><!-- End .page-content -->
 </main><!-- End .main -->
 @section Scripts {
-    <script src="https://www.mercadopago.com/v2/security.js" view="Checkout"></script>
-
+    <script src="https://www.mercadopago.com/v2/security.js" view="checkout" output="deviceId"></script>
     <script src="https://sdk.mercadopago.com/js/v2"></script>
 
      <script>
-        // Agrega credenciales de SDK
         const mp = new MercadoPago("APP_USR-d81f7be9-ee11-4ff0-bf4e-20c36981d7bf", {
             locale: "es-MX",
         });
 
-        ////debugger
-        //var preferenceId = '@Html.Raw(ViewData["preferenceId"]).ToString()';
-        //// Inicializa el checkout
-        //mp.checkout({
-        //    preference: {
-        //        id: preferenceId,
-        //    },
-        //    render: {
-        //        container: ".cho-container",
-        //        label: "Pagar la compra",
-        //    }
-        //});
+        //debugger
+        var preferenceId = '@Html.Raw(ViewData["preferenceId"]).ToString()';
+        // Inicializa el checkout
+        mp.checkout({
+            preference: {
+                id: preferenceId,
+            },
+            //render: {
+            //    container: ".cho-container",
+            //    label: "Pagar la compra",
+            //}
+        });
     </script>
 
     <script>
